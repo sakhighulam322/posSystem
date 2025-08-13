@@ -12,7 +12,7 @@ use App\Traits\CacheForget;
 
 class WarehouseController extends Controller
 {
-    use CacheForget;
+    // use CacheForget;
     public function index()
     {
         $lims_warehouse_all = Warehouse::where('is_active', true)->get();
@@ -140,4 +140,15 @@ class WarehouseController extends Controller
 
         return response()->json($html);
     }
+
+    public function list()
+    {
+        return view('warehouse.list');
+    }
+
+    public function create()
+    {
+        return view('warehouse.create');
+    }
+    
 }
